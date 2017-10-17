@@ -1,0 +1,47 @@
+/*https://quantiacs.com/Blog/Intro-to-Algorithmic-Trading-with-Heikin-Ashi.aspx
+
+if trading pair volume is > a specific volume
+
+and
+
+if trading pair volume is *detected increase in momentum*
+
+and 
+
+if trading pair volume is at a position increase
+		**several factors
+		
+then BUY
+
+
+
+if asset hits threshold for gain, then sell
+
+formula for % change: (v2-v1) / v1  * 100
+
+need a data structure for past N minutes of trading volume
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
