@@ -33,4 +33,8 @@ public class MainController {
 			lblStatus.setText("Login Failed");
 		}
 	}
+	
+	public void Register(ActionEvent event) throws Exception {
+		
+	}
 }
