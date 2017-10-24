@@ -1,6 +1,6 @@
 package application;
 import java.io.File;
-import java.io.PrintWriter;
+import java.io.FileWriter;
 import java.util.Scanner;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -35,6 +35,9 @@ public class MainController {
 	@FXML 
 	private Button logButton;
 	
+	private Stage primaryStage;
+	private Parent root;
+
 	
 	public void Login(ActionEvent event) throws Exception{
 		File infile = new File("UserStore.txt");
@@ -64,26 +67,34 @@ public class MainController {
 	}
 	
 	public void Register(ActionEvent event) throws Exception {
-		Stage primaryStage = new Stage();
+		Stage current = (Stage) logButton.getScene().getWindow();
 		Parent root = FXMLLoader.load(getClass().getResource("/application/Register.fxml"));
 		Scene scene = new Scene(root, 400, 400);
 		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-		primaryStage.setScene(scene);
-		primaryStage.show();
+		current.setScene(scene);
+		current.show();
 		
 	}
 	
 	public void CreateUser(ActionEvent event) throws Exception {
 		if (regPassword.getText().equals(regPasswordConfirm.getText())) {
 			File outfile = new File("UserStore.txt");
-			outfile.createNewFile();
-			PrintWriter output = new PrintWriter(outfile);
-			output.println(regUsername.getText());
-			output.print(regPassword.getText());
+			if (!outfile.exists()) {
+				outfile.createNewFile();
+			}
+			FileWriter output = new FileWriter(outfile, true);
+			output.write(regUsername.getText() + "\n");
+			output.write(regPassword.getText() + "\n");
 			output.close();
 			regStatus.setText("Registration Succesful!");
 			Stage current = (Stage) regButton.getScene().getWindow();
-			current.close();
+			root = FXMLLoader.load(getClass().getResource("/application/Login.fxml"));
+			Scene scene = new Scene(root, 400, 400);
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			current.setScene(scene);
+			current.show();
+			
+			
 		}
 		else {
 			regStatus.setText("Passwords do not match!");
