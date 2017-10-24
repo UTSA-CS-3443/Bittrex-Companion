@@ -1,9 +1,10 @@
 package application;
-import java.io.*;
+import java.io.File;
+import java.io.PrintWriter;
+import java.util.Scanner;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -13,6 +14,8 @@ import javafx.stage.Stage;
 
 public class MainController {
 
+	private String username, password;
+	
 	@FXML
 	private Label lblStatus;
 	@FXML 
@@ -29,20 +32,35 @@ public class MainController {
 	private TextField regPasswordConfirm;
 	@FXML
 	private Button regButton;
+	@FXML 
+	private Button logButton;
 	
 	
 	public void Login(ActionEvent event) throws Exception{
-		if(txtUsername.getText().equals("user") && txtPassword.getText().equals("pass")) {
-			Stage primaryStage = new Stage();
-			Parent root = FXMLLoader.load(getClass().getResource("/application/Main.fxml"));
-			lblStatus.setText("Login Success");
-			Scene scene = new Scene(root,400,400);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.show();
-		}else {
-			lblStatus.setText("Login Failed");
+		File infile = new File("UserStore.txt");
+		if (infile.exists()) {
+			Scanner scan = new Scanner(infile);
+			this.username = scan.next();
+			this.password = scan.next();
 		}
+		else {
+			lblStatus.setText("Not Registered");
+		}
+		if (this.username != null && this.password != null) {
+			if(txtUsername.getText().equals(this.username) && txtPassword.getText().equals(this.password)) {
+				Stage current = (Stage) logButton.getScene().getWindow();
+				current.close();
+				Stage primaryStage = new Stage();
+				Parent root = FXMLLoader.load(getClass().getResource("/application/Main.fxml"));
+				lblStatus.setText("Login Success");
+				Scene scene = new Scene(root,800,800);
+				scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+				primaryStage.setScene(scene);
+				primaryStage.show();
+				} else {
+					lblStatus.setText("Login Failed");
+				}
+			}
 	}
 	
 	public void Register(ActionEvent event) throws Exception {
