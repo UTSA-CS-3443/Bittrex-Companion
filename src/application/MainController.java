@@ -49,6 +49,7 @@ public class MainController {
 		if (this.username != null && this.password != null) {
 			if(txtUsername.getText().equals(this.username) && txtPassword.getText().equals(this.password)) {
 				Stage current = (Stage) logButton.getScene().getWindow();
+				
 				current.close();
 				Stage primaryStage = new Stage();
 				Parent root = FXMLLoader.load(getClass().getResource("/application/Main.fxml"));
