@@ -56,7 +56,7 @@ public class LoginController {
 				Stage primaryStage = new Stage();
 				Parent root = FXMLLoader.load(getClass().getResource("/application/Main.fxml"));
 				lblStatus.setText("Login Success");
-				Scene scene = new Scene(root,800,800);
+				Scene scene = new Scene(root,900,700);
 				scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 				primaryStage.setScene(scene);
 				primaryStage.show();
