@@ -1,5 +1,9 @@
 /*https://quantiacs.com/Blog/Intro-to-Algorithmic-Trading-with-Heikin-Ashi.aspx
 
+10-24-2017. had to wrestle with eclipse, finally uninstalling it all from OS, installing
+Oxygen (again) and then pulling/pushing.  Works. JS
+
+
 if trading pair volume is > a specific volume
 
 and
