@@ -12,7 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class MainController {
+public class LoginController {
 
 	private String username, password;
 	
