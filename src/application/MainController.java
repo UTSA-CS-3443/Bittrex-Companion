@@ -49,7 +49,6 @@ public class MainController {
 		if (this.username != null && this.password != null) {
 			if(txtUsername.getText().equals(this.username) && txtPassword.getText().equals(this.password)) {
 				Stage current = (Stage) logButton.getScene().getWindow();
-				
 				current.close();
 				Stage primaryStage = new Stage();
 				Parent root = FXMLLoader.load(getClass().getResource("/application/Main.fxml"));
@@ -75,7 +74,6 @@ public class MainController {
 	}
 	
 	public void CreateUser(ActionEvent event) throws Exception {
-		System.out.println(regPassword.getText().equals(regPasswordConfirm.getText()));
 		if (regPassword.getText().equals(regPasswordConfirm.getText())) {
 			File outfile = new File("UserStore.txt");
 			outfile.createNewFile();
