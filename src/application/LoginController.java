@@ -43,12 +43,16 @@ public class LoginController {
 		File infile = new File("UserStore.txt");
 		if (infile.exists()) {
 			Scanner scan = new Scanner(infile);
-			this.username = scan.next();
-			this.password = scan.next();
+			while (scan.hasNext()) {
+				this.username = scan.next();
+				this.password = scan.next();
+			}
+			scan.close();
 		}
 		else {
-			lblStatus.setText("Not Registered");
+			lblStatus.setText("None Registered");
 		}
+		
 		if (this.username != null && this.password != null) {
 			if(txtUsername.getText().equals(this.username) && txtPassword.getText().equals(this.password)) {
 				Stage current = (Stage) logButton.getScene().getWindow();
@@ -77,14 +81,13 @@ public class LoginController {
 	}
 	
 	public void CreateUser(ActionEvent event) throws Exception {
-		if (regPassword.getText().equals(regPasswordConfirm.getText())) {
+		if (regPassword.getText().equals(regPasswordConfirm.getText()) && regPassword.getText() != null) {
 			File outfile = new File("UserStore.txt");
 			if (!outfile.exists()) {
 				outfile.createNewFile();
 			}
 			FileWriter output = new FileWriter(outfile, true);
-			output.write(regUsername.getText() + "\n");
-			output.write(regPassword.getText() + "\n");
+			output.write(regUsername.getText() + "\n" + regPassword.getText() + "\n");
 			output.close();
 			regStatus.setText("Registration Succesful!");
 			Stage current = (Stage) regButton.getScene().getWindow();
@@ -93,8 +96,6 @@ public class LoginController {
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			current.setScene(scene);
 			current.show();
-			
-			
 		}
 		else {
 			regStatus.setText("Passwords do not match!");
