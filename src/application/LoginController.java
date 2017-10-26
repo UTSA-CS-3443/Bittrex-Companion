@@ -86,7 +86,7 @@ public class LoginController {
 			if (!outfile.exists()) {
 				outfile.createNewFile();
 			}
-			FileWriter output = new FileWriter(outfile, true);
+			FileWriter output = new FileWriter(outfile);
 			output.write(regUsername.getText() + "\n" + regPassword.getText() + "\n");
 			output.close();
 			regStatus.setText("Registration Succesful!");
