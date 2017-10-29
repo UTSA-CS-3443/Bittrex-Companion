@@ -66,7 +66,6 @@ public class JSONObject {
 						duplicates++;
 					}
 					jMap.put(this.tempKey, this.tempVal);
-					System.out.println(tempKey + " " + tempVal);
 					tempKey = "99";
 					tempVal = "99";
 				}
