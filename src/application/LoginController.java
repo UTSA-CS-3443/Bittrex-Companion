@@ -31,6 +31,10 @@ public class LoginController {
 	@FXML
 	private TextField regPasswordConfirm;
 	@FXML
+	private TextField regName;
+	@FXML
+	private TextField regAPIKey;
+	@FXML
 	private Button regButton;
 	@FXML 
 	private Button logButton;
@@ -87,7 +91,14 @@ public class LoginController {
 				outfile.createNewFile();
 			}
 			FileWriter output = new FileWriter(outfile);
-			output.write(regUsername.getText() + "\n" + regPassword.getText() + "\n");
+			output.write(regUsername.getText() + "\n" + regPassword.getText());
+			output.close();
+			outfile = new File("UserInfo.txt");
+			if (!outfile.exists()) {
+				outfile.createNewFile();
+			}
+			output = new FileWriter(outfile);
+			output.write(regName.getText() + "\n" + regAPIKey.getText());
 			output.close();
 			regStatus.setText("Registration Succesful!");
 			Stage current = (Stage) regButton.getScene().getWindow();
