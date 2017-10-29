@@ -1,6 +1,6 @@
 package apis;
 
-import java.net.URL;
+import java.net.*;
 import java.util.Scanner;
 public class Coin {
 
@@ -25,19 +25,35 @@ public class Coin {
 		
 	}
 	
-	public String getTicker(String key) throws Exception { 
-		this.jObj = getInfo("https://bittrex.com/api/v1.1/public/getticker?market=BTC-" + this.coin);
-		return jObj.getValue(key);
+	public String getTicker(String key) { 
+		try {
+			this.jObj = getInfo("https://bittrex.com/api/v1.1/public/getticker?market=BTC-" + this.coin);
+			return jObj.getValue(key);
+		} catch (Exception e) {
+			//Something seriously wrong here, show me the stack trace!
+			e.printStackTrace();
+		}
+		return "Something went seriously wrong here, investigate";
 	}
 	
-	public String getMarketSummary(String key) throws Exception {
-		this.jObj = getInfo("https://bittrex.com/api/v1.1/public/getmarketsummary?market=BTC-" + this.coin);
-		return jObj.getValue(key);
+	public String getMarketSummary(String key) {
+		try {
+			this.jObj = getInfo("https://bittrex.com/api/v1.1/public/getmarketsummary?market=BTC-" + this.coin);
+			return jObj.getValue(key);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "Something went seriously wrong here, investigate";
 	}
 	
-	public String getBalance() throws Exception {
-		this.jObj = getInfo("https://bittrex.com/api/v1.1/account/getbalance?apikey=" + this.apiKey + "&currency=BTC");
-		return jObj.getValue("Balance");
+	public String getBalance() {
+		try {
+			this.jObj = getInfo("https://bittrex.com/api/v1.1/account/getbalance?apikey=" + this.apiKey + "&currency=BTC");
+			return jObj.getValue("Balance");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "Something went seriously wrong here, investigate";
 	}
 	
 	
