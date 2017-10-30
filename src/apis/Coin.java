@@ -1,7 +1,11 @@
 package apis;
 
 import java.net.*;
+
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
 import java.util.Scanner;
+import java.security.*;
 public class Coin {
 
 	private String coin;
@@ -48,8 +52,7 @@ public class Coin {
 	
 	public String getBalance() {
 		try {
-			this.jObj = getInfo("https://bittrex.com/api/v1.1/account/getbalance?apikey=" + this.apiKey + "&currency=BTC");
-			return jObj.getValue("Balance");
+			//TODO: Need to hash and such, waiting on response from Bittrex
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
