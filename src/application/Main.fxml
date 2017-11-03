@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <children>
       <Label fx:id="nameLabel" layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="206.0">
@@ -21,5 +20,10 @@
             <Font size="18.0" />
          </font>
       </Label>
+      <Button layoutX="22.0" layoutY="52.0" mnemonicParsing="false" onAction="#OpenOpps" prefHeight="90.0" prefWidth="245.0" text="Coins">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

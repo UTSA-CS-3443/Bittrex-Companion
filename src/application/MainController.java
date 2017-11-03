@@ -25,7 +25,7 @@ public class MainController {
 	private Label nameLabel;
 	
 	public void initialize() {
-		try {
+	/*	try {
 			Scanner readIn = new Scanner(new File("UserInfo.txt"));
 			this.name = readIn.next();
 			this.apiKey = readIn.next();
@@ -37,6 +37,22 @@ public class MainController {
 			// TODO: Figure out some logic to put here just in case
 		}
 		this.balanceLabel.setText(this.balance);
+		*/
+	}
+	
+	public void OpenOpps() {
+		try {
+			Stage oppStage = new Stage();
+			Parent root = FXMLLoader.load(getClass().getResource("/application/Opps.fxml"));
+			Scene scene = new Scene(root,600,400);
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			oppStage.setScene(scene);
+			oppStage.show();
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	

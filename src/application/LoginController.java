@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 
 public class LoginController {
 
+	private static final int cryptVal = 45;
 	private String username, password;
 	
 	@FXML
@@ -110,7 +111,7 @@ public class LoginController {
 		}
 		else {
 			regStatus.setText("Passwords do not match!");
-		}
-		
+		}	
 	}
+	
 }
