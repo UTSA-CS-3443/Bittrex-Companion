@@ -38,6 +38,7 @@ public class MainController {
 			// TODO: Figure out some logic to put here just in case
 		}
 		this.balanceLabel.setText(this.balance);
+		this.nameLabel.setText(this.name);
 		
 	}
 	
