@@ -17,7 +17,7 @@ import java.io.FileNotFoundException;
 
 
 public class MainController {
-	private String balance, name, apiKey;
+	private String balance, name, apiKey, apiSecret;
 	private Coin coin;
 	@FXML
 	private Label balanceLabel;
@@ -25,19 +25,20 @@ public class MainController {
 	private Label nameLabel;
 	
 	public void initialize() {
-	/*	try {
+		try {
 			Scanner readIn = new Scanner(new File("UserInfo.txt"));
 			this.name = readIn.next();
 			this.apiKey = readIn.next();
-			this.coin = new Coin("LTC", this.apiKey);
+			this.apiSecret = readIn.next();
+			this.coin = new Coin("BTC", this.apiKey, this.apiSecret);
 			readIn.close();
-			this.balance = this.coin.getBalance();
+			this.balance = "Balance = " + this.coin.getBalance() + " Bitcoin";
 		} catch (FileNotFoundException e) {
 			// Should never happen
 			// TODO: Figure out some logic to put here just in case
 		}
 		this.balanceLabel.setText(this.balance);
-		*/
+		
 	}
 	
 	public void OpenOpps() {

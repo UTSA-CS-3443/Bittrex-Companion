@@ -13,7 +13,7 @@
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="regAPIKey" alignment="CENTER" layoutX="81.0" layoutY="97.0" text="API Key">
+      <TextField fx:id="regAPIKey" alignment="CENTER" layoutX="81.0" layoutY="74.0" text="API Key">
          <font>
             <Font size="18.0" />
          </font>
@@ -43,5 +43,10 @@
             <Font size="18.0" />
          </font>
       </Label>
+      <TextField fx:id="regAPISecret" alignment="CENTER" layoutX="81.0" layoutY="124.0" text="API Secret">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
    </children>
 </AnchorPane>
