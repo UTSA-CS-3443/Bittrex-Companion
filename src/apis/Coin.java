@@ -64,7 +64,6 @@ public class Coin {
 			String uri = "https://bittrex.com/api/v1.1/account/getbalance?apikey=" + this.apiKey + "&currency=BTC&nonce=" + nonce;
 			String apisign = calculateHMAC(uri, this.apiSecret);
 			String rawData = "";
-			String balRet;
 			URL url = new URL(uri);
 			URLConnection con = url.openConnection();
 			con.addRequestProperty("apikey", this.apiKey);
@@ -79,7 +78,7 @@ public class Coin {
 			while (in.hasNext()) {
 				rawData += in.next();
 			}
-			
+			in.close();
 			JSONObject tempObj = new JSONObject(rawData);
 			if (tempObj.getValue("Balance").equals("null")) {
 				return "0";
@@ -99,11 +98,15 @@ public class Coin {
 		return String.valueOf(ms);
 	}
 	private static String toHexString(byte[] bytes) {
+		String retVal;
 	    Formatter formatter = new Formatter();
 	    for (byte b : bytes) {
 	        formatter.format("%02x", b);
 	    }
-	    return formatter.toString();
+	    retVal = formatter.toString();
+	    formatter.close();
+	    return retVal;
+
 	}
 
 	private static String calculateHMAC(String data, String key)

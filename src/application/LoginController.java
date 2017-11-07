@@ -14,7 +14,6 @@ import javafx.stage.Stage;
 
 public class LoginController {
 
-	private static final int cryptVal = 45;
 	private String username, password;
 	
 	@FXML
@@ -42,7 +41,6 @@ public class LoginController {
 	@FXML 
 	private Button logButton;
 	
-	private Stage primaryStage;
 	private Parent root;
 
 	
