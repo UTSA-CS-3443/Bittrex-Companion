@@ -27,9 +27,12 @@
 	and push again. I'll start making the UML today and i'll place it somewhere in here if 
 	possible? So as a team, let's communicate better and be transparent with each other.
 	
-	Hunter! Give me workable input that I can put into the register screen so that I can
-	go to the next screen. I get "Invalid value passed upon creation error messages".
-	Help me man. (probably has to due with my api key & secret).
+	Hunter! I know we use this for the register and login. But is this apikey like tied
+	to a real bittrex account or something or just a key to communicate to the bittrex
+	website to grab information?
+	
+	//String apikey = "efbb2db14372420cb999b867e289c692";
+	//String apisecret = "56c6a978e67544c6a34a7abe9fb64e45";
 	
 	- Richard
 ------------------------------------------------------------------------------------------- 

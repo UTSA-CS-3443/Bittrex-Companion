@@ -20,21 +20,40 @@ public class Coin {
 	private String apiSecret;
 	private JSONObject jObj;
 	
+	/**
+	 * Constructor for coin object that initializes the following parameters 
+	 *
+	 * @param coin
+	 * @param apiKey
+	 * @param apiSecret
+	 */
 	public Coin(String coin, String apiKey, String apiSecret) {
 		this.coin = coin;
 		this.apiKey = apiKey;
 		this.apiSecret = apiSecret;
-	}
+	} // End 3-argument coin constructor
 	
+	/**
+	 * Method getInfo takes a string sUrl to... (verify)
+	 * 
+	 * @param sUrl
+	 * @return JSONObject 
+	 * @throws Exception
+	 */
 	private JSONObject getInfo(String sUrl) throws Exception {
 		this.url = new URL(sUrl);
 		this.urlIn = new Scanner(this.url.openStream());
 		this.urlData = urlIn.next();
 		JSONObject temp = new JSONObject(this.urlData);
-		return temp;
-		
-	}
+		return temp;	
+	} // End getInfo method
 	
+	/**
+	 * Method getTicker takes a key and returns a string to get the value of the coin... (verify/update)
+	 * 
+	 * @param key
+	 * @return jObj / flag error message
+	 */
 	public String getTicker(String key) { 
 		try {
 			this.jObj = getInfo("https://bittrex.com/api/v1.1/public/getticker?market=BTC-" + this.coin);
@@ -44,8 +63,14 @@ public class Coin {
 			e.printStackTrace();
 		}
 		return "Something went seriously wrong here, investigate";
-	}
+	} //End getTicker method
 	
+	/**
+	 * Method getmarketSummary grabs the info of a coin from bittrex and returns... (verify/update) 
+	 * 
+	 * @param key
+	 * @return JObj 
+	 */
 	public String getMarketSummary(String key) {
 		try {
 			this.jObj = getInfo("https://bittrex.com/api/v1.1/public/getmarketsummary?market=BTC-" + this.coin);
@@ -54,7 +79,8 @@ public class Coin {
 			e.printStackTrace();
 		}
 		return "Something went seriously wrong here, investigate";
-	}
+	} // End getMarketSummary method
+	
 	
 	public String getBalance() {
 		try {
