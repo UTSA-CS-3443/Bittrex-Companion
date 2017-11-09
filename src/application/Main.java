@@ -71,8 +71,9 @@ public class Main extends Application {
 					coinVals[i][0] = split[1];
 					coinVals[i][1] = split[0];
 					out.println(coins[i] + "," + coinVals[i][0] + "," + coinVals[i][1]);
-					out.flush();
 				}
+				out.println();
+				out.flush();
 				Thread.sleep(TIME_TO_WAIT_IN_SECONDS * 1000);
 			}
 		}
