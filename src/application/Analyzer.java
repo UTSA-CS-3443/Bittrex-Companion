@@ -8,8 +8,8 @@ import java.util.ArrayList;
  * @author Hunter Jones
  * @author Jerome Stowe
  * @author Oscar Tena
- * @author Micheal
- * @author Richard
+ * @author Micheal Womack	
+ * @author Richard Amareth
  *
  */
 
@@ -23,7 +23,7 @@ public class Analyzer {
 	private boolean checkForThresh;
 	
 	/**
-	 * Constructer for class. 
+	 * Constructor for class. 
 	 * 
 	 * @param data Array of doubles containing the data you wish to analyze
 	 * @param percentThreshold The threshold you wish to check against
