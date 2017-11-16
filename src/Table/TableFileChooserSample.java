@@ -38,7 +38,8 @@ public class TableFileChooserSample extends Application {
             new Person("Ethan", "Williams", "ethan.williams@example.com"),
             new Person("Emma", "Jones", "emma.jones@example.com"),
             new Person("Michael", "Brown", "michael.brown@example.com"),
-            new Person("Oscar" ,"Tena", "oscar.tena@example.com"));
+            new Person("Oscar" ,"Tena", "oscar.tena@example.com"),
+    		new Person("Jerome ", "Stowe","JS@example.com"));
 
     final HBox hb = new HBox();
  
