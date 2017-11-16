@@ -32,8 +32,7 @@ import javafx.stage.Stage;
 public class TableFileChooserSample extends Application {
  
     private TableView<Person> table = new TableView<Person>();
-    private final ObservableList<Person> data =
-            FXCollections.observableArrayList(
+    private final ObservableList<Person> data =FXCollections.observableArrayList(
             new Person("Jacob", "Smith", "jacob.smith@example.com"),
             new Person("Isabella", "Johnson", "isabella.johnson@example.com"),
             new Person("Ethan", "Williams", "ethan.williams@example.com"),
