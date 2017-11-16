@@ -1,0 +1,8 @@
+1) Algorithm
+	a) Initially filter coins < 300 volume
+	b) If greater than 300 volume:
+		i) Look for percent change > (user supplied, default 5%) at least 3 times
+		ii) Among those return the ones that have a current price within a small percent of the 48 hour minimum
+		 If more than (number of table elements) returned, sort: Volume, high -> low
+		 
+News Box: Jerome
