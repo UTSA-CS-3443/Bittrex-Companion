@@ -11,14 +11,10 @@ import java.util.List;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -32,7 +28,8 @@ public class Main extends Application {
     }
 
    
-    public void start(Stage primaryStage) throws Exception {
+    @Override
+	public void start(Stage primaryStage) throws Exception {
         window = primaryStage;
         window.setTitle("Bittrex Companion");
 
@@ -89,7 +86,7 @@ public class Main extends Application {
         ObservableList<Table> table = FXCollections.observableArrayList();
         ((List<Table>) table).add(new Table("gold",1,1,1,1));
         
-        return (ObservableList<Table>) table;
+        return table;
     }
 
 

@@ -8,28 +8,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 import java.io.File;
-import java.util.Date;
-/*	for the main window: recommended coins:
- *  the coins have been filtered by those that have done 300 BTC
- *  or greater in the last 48 hours.
- *  they are further refined by identifying those that have done 3
- *  or more changes in percent change (we will go with 4% in first draft)
- *  during that 48 hour period.
- *  then, this further whiddles down our "recommended" coins.
- *  we sort those by Volume, in descending order
- *  and we choose however many display nice on our table/field on the app
- *  then we make a loop to call on the above data:
- *  
- * 	if we go with 5, for example
- *           for(int i= 0; i < 5; i++){
-             	print the coins to the table where we show
-                the "recommended coins"
-         }
- 
-
-
-
-*/
 
 public class Main extends Application {
 	//set this to true to run the below code in main
