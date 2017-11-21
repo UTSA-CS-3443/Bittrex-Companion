@@ -7,15 +7,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
 import apis.Coin;
-import javafx.collections.*;
-import javafx.collections.ObservableList;
 import java.io.FileNotFoundException;
-import javafx.scene.layout.*;
+
 
 
 public class MainController {
