@@ -7,17 +7,76 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import apis.Coin;
+import javafx.collections.*;
+import javafx.collections.ObservableList;
 import java.io.FileNotFoundException;
+import javafx.scene.layout.*;
 
 
 public class MainController {
 	private String balance, name, apiKey, apiSecret;
 	private Coin coin;
+
 	@FXML
 	private Label balanceLabel;
 	@FXML
 	private Label nameLabel;
+	@FXML
+	private TextField coin1;
+	@FXML 
+	private TextField coin2;
+	@FXML 
+	private TextField coin3;
+	@FXML 
+	private TextField coin4;
+	@FXML
+	private TextField coin5;
+	@FXML 
+	private TextField value1;
+	@FXML 
+	private TextField value2;
+	@FXML 
+	private TextField value3;
+	@FXML 
+	private TextField value4;
+	@FXML 
+	private TextField value5;
+	@FXML 
+	private TextField high1;
+	@FXML 
+	private TextField high2;
+	@FXML 
+	private TextField high3;
+	@FXML 
+	private TextField high4;
+	@FXML 
+	private TextField high5;
+	@FXML 
+	private TextField low1;
+	@FXML 
+	private TextField low2;
+	@FXML 
+	private TextField low3;
+	@FXML 
+	private TextField low4;
+	@FXML 
+	private TextField low5;
+	@FXML 
+	private TextField pChange1;
+	@FXML 
+	private TextField pChange2;
+	@FXML 
+	private TextField pChange3;
+	@FXML 
+	private TextField pChange4;
+	@FXML 
+	private TextField pChange5;
+	
 	
 	public void initialize() {
 		try {
@@ -27,13 +86,14 @@ public class MainController {
 			this.apiSecret = readIn.next();
 			this.coin = new Coin("BTC", this.apiKey, this.apiSecret);
 			readIn.close();
-			this.balance = "Balance = " + this.coin.getBalance() + " Bitcoin";
+			this.balance = "Balance = " + this.coin.getBalance() + " Bitcoin";		
 		} catch (FileNotFoundException e) {
 			// Should never happen
 			// TODO: Figure out some logic to put here just in case
 		}
 		this.balanceLabel.setText(this.balance);
 		this.nameLabel.setText(this.name);
+		
 		
 	}
 	
@@ -51,7 +111,4 @@ public class MainController {
 			e.printStackTrace();
 		}
 	}
-	
-	
-	
 }

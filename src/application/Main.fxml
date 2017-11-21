@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -8,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <children>
       <Label fx:id="nameLabel" layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="206.0">
          <font>
@@ -25,7 +29,7 @@
             <Font size="36.0" />
          </font>
       </Button>
-      <GridPane layoutX="24.0" layoutY="350.0" prefHeight="318.0" prefWidth="851.0">
+      <GridPane layoutX="24.0" layoutY="350.0" prefHeight="180.0" prefWidth="851.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -34,12 +38,45 @@
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="ALWAYS" />
+          <RowConstraints fillHeight="false" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" valignment="CENTER" vgrow="ALWAYS" />
+          <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
         </rowConstraints>
+         <children>
+            <TextField alignment="CENTER" text="Coin Name" />
+            <TextField fx:id="coin1" GridPane.rowIndex="1" />
+            <TextField fx:id="coin2" GridPane.rowIndex="2" />
+            <TextField fx:id="coin3" GridPane.rowIndex="3" />
+            <TextField fx:id="coin4" GridPane.rowIndex="4" />
+            <TextField fx:id="coin5" GridPane.rowIndex="5" />
+            <TextField alignment="CENTER" text="Current Value" GridPane.columnIndex="1" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField alignment="CENTER" text="High" GridPane.columnIndex="2" />
+            <TextField GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <TextField GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <TextField GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <TextField alignment="CENTER" text="Low" GridPane.columnIndex="3" />
+            <TextField GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <TextField GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <TextField GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <TextField GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <TextField GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <TextField alignment="CENTER" text="Percent Change" GridPane.columnIndex="4" />
+            <TextField GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <TextField GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <TextField GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <TextField GridPane.columnIndex="4" GridPane.rowIndex="4" />
+            <TextField GridPane.columnIndex="4" GridPane.rowIndex="5" />
+         </children>
       </GridPane>
    </children>
 </AnchorPane>

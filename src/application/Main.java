@@ -14,7 +14,7 @@ public class Main extends Application {
 	public static final boolean TEST = false;
 	
 	//set this to true and set the int value to the number of seconds to wait between pulls 
-	public static final boolean GATHER_DATA = true;
+	public static final boolean GATHER_DATA = false;
 	public static final long TIME_TO_WAIT_IN_SECONDS = 10;
 	
 	@Override
@@ -81,6 +81,6 @@ public class Main extends Application {
 		
 		
 		
-		//launch(args);
+		launch(args);
 	}
 }
