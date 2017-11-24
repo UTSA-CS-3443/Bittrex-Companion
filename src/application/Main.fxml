@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.web.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -78,5 +79,6 @@
             <TextField GridPane.columnIndex="4" GridPane.rowIndex="5" />
          </children>
       </GridPane>
+      <WebView fx:id="browser" layoutX="449.0" layoutY="9.0" prefHeight="270.0" prefWidth="440.0" />
    </children>
 </AnchorPane>

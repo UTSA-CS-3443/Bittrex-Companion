@@ -8,6 +8,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.scene.control.TextField;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import apis.Coin;
 import java.io.FileNotFoundException;
 
@@ -71,7 +73,9 @@ public class MainController {
 	private TextField pChange4;
 	@FXML 
 	private TextField pChange5;
-	
+	@FXML
+	WebView browser = new WebView();
+	WebEngine webEngine = browser.getEngine();
 	
 	public void initialize() {
 		try {
@@ -90,6 +94,9 @@ public class MainController {
 		this.nameLabel.setText(this.name);
 		
 		
+		webEngine.load("http://www.purple.com");
+		
+		
 	}
 	
 	public void OpenOpps() {
@@ -106,4 +113,8 @@ public class MainController {
 			e.printStackTrace();
 		}
 	}
+	
+
+	
+	
 }
