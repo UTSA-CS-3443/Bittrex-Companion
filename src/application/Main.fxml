@@ -53,6 +53,7 @@
             <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
+<!--          	column -->
             <TextField alignment="CENTER" text="Coin Name" />
             <TextField fx:id="coin1" GridPane.rowIndex="1" />
             <TextField fx:id="coin2" GridPane.rowIndex="2" />
@@ -65,25 +66,31 @@
             <TextField fx:id="coin9" GridPane.rowIndex="9" />
             <TextField fx:id="coin10" GridPane.rowIndex="10" />
             <TextField fx:id="coin11" GridPane.rowIndex="11" />
-            
+   <!--          	column -->         
             <TextField alignment="CENTER" text="Current Value" GridPane.columnIndex="1" />
             <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            
+            <!--          	column -->
             <TextField alignment="CENTER" text="High" GridPane.columnIndex="2" />
             <TextField GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <TextField GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <TextField GridPane.columnIndex="2" GridPane.rowIndex="3" />
             <TextField GridPane.columnIndex="2" GridPane.rowIndex="4" />
             <TextField GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            
+            <!--          	column -->
             <TextField alignment="CENTER" text="Low" GridPane.columnIndex="3" />
             <TextField GridPane.columnIndex="3" GridPane.rowIndex="1" />
             <TextField GridPane.columnIndex="3" GridPane.rowIndex="2" />
             <TextField GridPane.columnIndex="3" GridPane.rowIndex="3" />
             <TextField GridPane.columnIndex="3" GridPane.rowIndex="4" />
             <TextField GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            
+            <!--          	column -->
             <TextField alignment="CENTER" text="Percent Change" GridPane.columnIndex="4" />
             <TextField GridPane.columnIndex="4" GridPane.rowIndex="1" />
             <TextField GridPane.columnIndex="4" GridPane.rowIndex="2" />
