@@ -73,6 +73,12 @@
             <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="11" />
             
             <!--          	column -->
             <TextField alignment="CENTER" text="High" GridPane.columnIndex="2" />
@@ -81,6 +87,12 @@
             <TextField GridPane.columnIndex="2" GridPane.rowIndex="3" />
             <TextField GridPane.columnIndex="2" GridPane.rowIndex="4" />
             <TextField GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <TextField GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <TextField GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <TextField GridPane.columnIndex="2" GridPane.rowIndex="8" />
+            <TextField GridPane.columnIndex="2" GridPane.rowIndex="9" />
+            <TextField GridPane.columnIndex="2" GridPane.rowIndex="10" />
+            <TextField GridPane.columnIndex="2" GridPane.rowIndex="11" />
             
             <!--          	column -->
             <TextField alignment="CENTER" text="Low" GridPane.columnIndex="3" />
@@ -89,6 +101,12 @@
             <TextField GridPane.columnIndex="3" GridPane.rowIndex="3" />
             <TextField GridPane.columnIndex="3" GridPane.rowIndex="4" />
             <TextField GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <TextField GridPane.columnIndex="3" GridPane.rowIndex="6" />
+            <TextField GridPane.columnIndex="3" GridPane.rowIndex="7" />
+            <TextField GridPane.columnIndex="3" GridPane.rowIndex="8" />
+            <TextField GridPane.columnIndex="3" GridPane.rowIndex="9" />
+            <TextField GridPane.columnIndex="3" GridPane.rowIndex="10" />
+            <TextField GridPane.columnIndex="3" GridPane.rowIndex="11" />
             
             <!--          	column -->
             <TextField alignment="CENTER" text="Percent Change" GridPane.columnIndex="4" />
@@ -97,6 +115,13 @@
             <TextField GridPane.columnIndex="4" GridPane.rowIndex="3" />
             <TextField GridPane.columnIndex="4" GridPane.rowIndex="4" />
             <TextField GridPane.columnIndex="4" GridPane.rowIndex="5" />
+            <TextField GridPane.columnIndex="4" GridPane.rowIndex="6" />
+            <TextField GridPane.columnIndex="4" GridPane.rowIndex="7" />
+            <TextField GridPane.columnIndex="4" GridPane.rowIndex="8" />
+            <TextField GridPane.columnIndex="4" GridPane.rowIndex="9" />
+            <TextField GridPane.columnIndex="4" GridPane.rowIndex="10" />
+            <TextField GridPane.columnIndex="4" GridPane.rowIndex="11" />
+
          </children>
       </GridPane>
       <WebView fx:id="browser" layoutX="449.0" layoutY="9.0" prefHeight="270.0" prefWidth="440.0" />
