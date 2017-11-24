@@ -73,9 +73,8 @@ public class MainController {
 	private TextField pChange4;
 	@FXML 
 	private TextField pChange5;
-	@FXML
-	WebView browser = new WebView();
-	WebEngine webEngine = browser.getEngine();
+	//micheal & Jerome---test
+
 	
 	public void initialize() {
 		try {
@@ -93,9 +92,7 @@ public class MainController {
 		this.balanceLabel.setText(this.balance);
 		this.nameLabel.setText(this.name);
 		
-		
-		webEngine.load("http://www.purple.com");
-		
+
 		
 	}
 	
