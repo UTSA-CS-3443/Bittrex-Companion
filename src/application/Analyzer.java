@@ -1,5 +1,5 @@
 package application;
-import java.util.ArrayList;
+
 import apis.Coin;
 
 /**
@@ -16,31 +16,44 @@ import apis.Coin;
 
 public class Analyzer {
 	
-	private Coin[] coinsList;
-	private ArrayList<Coin> coinsToReturn;
+	private Coin coin;
 	private boolean success;
+	private String name;
 	private double volume, low, high, pChange, current;
 	
-	public Analyzer(Coin[] coinsList) {
-		this.coinsList = coinsList;
-		this.coinsToReturn = new ArrayList<Coin>();
+	public Analyzer(Coin coin) {
+		this.coin = coin;
 		success = false;
 		analyze();
-		
 	}
 	
 	private void analyze() {
-		for (Coin temp : this.coinsList) {
-			this.volume = Double.valueOf(temp.getMarketSummary("BaseVolume"));
-			this.high = Double.valueOf(temp.getMarketSummary("High"));
-			this.low = Double.valueOf(temp.getMarketSummary("Low"));
-			this.current = Double.valueOf(temp.getMarketSummary("Last"));
-			this.pChange = percentChange(this.low, this.high);
-			if (this.pChange >= 5 && this.volume >= 300)
-				coinsToReturn.add(temp);
-		}
-		if (coinsToReturn.size() >= 5)
+		this.name = coin.getMarketSummary("MarketName");
+		this.volume = Double.valueOf(this.coin.getMarketSummary("BaseVolume"));
+		this.high = Double.valueOf(this.coin.getMarketSummary("High"));
+		this.low = Double.valueOf(this.coin.getMarketSummary("Low"));
+		this.current = Double.valueOf(this.coin.getMarketSummary("Last"));
+		this.pChange = percentChange(this.low, this.high);
+		if (this.pChange >= 5 && this.volume > 300)
 			this.success = true;
+	}
+	public double getVolume() {
+		return this.volume;
+	}
+	public double getHigh() {
+		return this.high;
+	}
+	public double getLow() {
+		return this.low;
+	}
+	public double getValue() {
+		return this.current;
+	}
+	public String getName() {
+		return this.name;
+	}
+	public double getPChange() {
+		return this.pChange;
 	}
 	
 	public double priorityScore() {
@@ -53,9 +66,5 @@ public class Analyzer {
 	
 	public boolean checkForSuccess() {
 		return this.success;
-	}
-	
-	public ArrayList<Coin> getCoins() {
-		return this.coinsToReturn;
 	}
 }

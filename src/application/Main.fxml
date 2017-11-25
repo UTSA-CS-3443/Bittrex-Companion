@@ -15,17 +15,17 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <children>
-      <Label fx:id="nameLabel" layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="206.0">
+      <Label fx:id="nameLabel" layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="206.0" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="balanceLabel" layoutX="698.0" layoutY="14.0" prefHeight="27.0" prefWidth="188.0">
+      <Label fx:id="balanceLabel" layoutX="14.0" layoutY="41.0" prefHeight="27.0" prefWidth="188.0" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="22.0" layoutY="52.0" mnemonicParsing="false" onAction="#OpenOpps" prefHeight="90.0" prefWidth="245.0" text="Coins">
+      <Button layoutX="14.0" layoutY="115.0" mnemonicParsing="false" onAction="#OpenOpps" prefHeight="90.0" prefWidth="245.0" text="Coins">
          <font>
             <Font size="36.0" />
          </font>
@@ -55,7 +55,7 @@
          <children>
 			<!--          	column -->
             <TextField alignment="CENTER" text="Coin Name" />
-            <TextField fx:id="coin1" GridPane.rowIndex="1" />
+            <TextField fx:id="coin1" onMouseClicked="#OpenOpps" GridPane.rowIndex="1" />
             <TextField fx:id="coin2" GridPane.rowIndex="2" />
             <TextField fx:id="coin3" GridPane.rowIndex="3" />
             <TextField fx:id="coin4" GridPane.rowIndex="4" />
@@ -68,59 +68,59 @@
             <TextField fx:id="coin11" GridPane.rowIndex="11" />
    			<!--          	column -->         
             <TextField alignment="CENTER" text="Current Value" GridPane.columnIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="8" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="9" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="10" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="11" />
+            <TextField fx:id="value1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="value2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="value3" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="value4" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="value5" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="value6" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField fx:id="value7" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <TextField fx:id="value8" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <TextField fx:id="value9" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <TextField fx:id="value10" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <TextField fx:id="value11" GridPane.columnIndex="1" GridPane.rowIndex="11" />
             
             <!--          	column -->
             <TextField alignment="CENTER" text="High" GridPane.columnIndex="2" />
-            <TextField GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <TextField GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <TextField GridPane.columnIndex="2" GridPane.rowIndex="5" />
-            <TextField GridPane.columnIndex="2" GridPane.rowIndex="6" />
-            <TextField GridPane.columnIndex="2" GridPane.rowIndex="7" />
-            <TextField GridPane.columnIndex="2" GridPane.rowIndex="8" />
-            <TextField GridPane.columnIndex="2" GridPane.rowIndex="9" />
-            <TextField GridPane.columnIndex="2" GridPane.rowIndex="10" />
-            <TextField GridPane.columnIndex="2" GridPane.rowIndex="11" />
+            <TextField fx:id="high1" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="high2" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="high3" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <TextField fx:id="high4" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <TextField fx:id="high5" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <TextField fx:id="high6" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <TextField fx:id="high7" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <TextField fx:id="high8" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+            <TextField fx:id="high9" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+            <TextField fx:id="high10" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+            <TextField fx:id="high11" GridPane.columnIndex="2" GridPane.rowIndex="11" />
             
             <!--          	column -->
             <TextField alignment="CENTER" text="Low" GridPane.columnIndex="3" />
-            <TextField GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="3" GridPane.rowIndex="3" />
-            <TextField GridPane.columnIndex="3" GridPane.rowIndex="4" />
-            <TextField GridPane.columnIndex="3" GridPane.rowIndex="5" />
-            <TextField GridPane.columnIndex="3" GridPane.rowIndex="6" />
-            <TextField GridPane.columnIndex="3" GridPane.rowIndex="7" />
-            <TextField GridPane.columnIndex="3" GridPane.rowIndex="8" />
-            <TextField GridPane.columnIndex="3" GridPane.rowIndex="9" />
-            <TextField GridPane.columnIndex="3" GridPane.rowIndex="10" />
-            <TextField GridPane.columnIndex="3" GridPane.rowIndex="11" />
+            <TextField fx:id="low1" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <TextField fx:id="low2" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <TextField fx:id="low3" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <TextField fx:id="low4" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <TextField fx:id="low5" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <TextField fx:id="low6" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+            <TextField fx:id="low7" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+            <TextField fx:id="low8" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+            <TextField fx:id="low9" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+            <TextField fx:id="low10" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+            <TextField fx:id="low11" GridPane.columnIndex="3" GridPane.rowIndex="11" />
             
             <!--          	column -->
             <TextField alignment="CENTER" text="Percent Change" GridPane.columnIndex="4" />
-            <TextField GridPane.columnIndex="4" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="4" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="4" GridPane.rowIndex="3" />
-            <TextField GridPane.columnIndex="4" GridPane.rowIndex="4" />
-            <TextField GridPane.columnIndex="4" GridPane.rowIndex="5" />
-            <TextField GridPane.columnIndex="4" GridPane.rowIndex="6" />
-            <TextField GridPane.columnIndex="4" GridPane.rowIndex="7" />
-            <TextField GridPane.columnIndex="4" GridPane.rowIndex="8" />
-            <TextField GridPane.columnIndex="4" GridPane.rowIndex="9" />
-            <TextField GridPane.columnIndex="4" GridPane.rowIndex="10" />
-            <TextField GridPane.columnIndex="4" GridPane.rowIndex="11" />
+            <TextField fx:id="pChange1" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <TextField fx:id="pChange2" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <TextField fx:id="pChange3" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <TextField fx:id="pChange4" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+            <TextField fx:id="pChange5" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+            <TextField fx:id="pChange6" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+            <TextField fx:id="pChange7" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+            <TextField fx:id="pChange8" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+            <TextField fx:id="pChange9" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+            <TextField fx:id="pChange10" GridPane.columnIndex="4" GridPane.rowIndex="10" />
+            <TextField fx:id="pChange11" GridPane.columnIndex="4" GridPane.rowIndex="11" />
 
          </children>
       </GridPane>
