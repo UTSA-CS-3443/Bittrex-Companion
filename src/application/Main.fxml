@@ -56,16 +56,16 @@
 			<!--          	column -->
             <TextField alignment="CENTER" text="Coin Name" />
             <TextField fx:id="coin1" onMouseClicked="#OpenOpps" GridPane.rowIndex="1" />
-            <TextField fx:id="coin2" GridPane.rowIndex="2" />
-            <TextField fx:id="coin3" GridPane.rowIndex="3" />
-            <TextField fx:id="coin4" GridPane.rowIndex="4" />
-            <TextField fx:id="coin5" GridPane.rowIndex="5" />
-            <TextField fx:id="coin6" GridPane.rowIndex="6" />
-            <TextField fx:id="coin7" GridPane.rowIndex="7" />
-            <TextField fx:id="coin8" GridPane.rowIndex="8" />
-            <TextField fx:id="coin9" GridPane.rowIndex="9" />
-            <TextField fx:id="coin10" GridPane.rowIndex="10" />
-            <TextField fx:id="coin11" GridPane.rowIndex="11" />
+            <TextField fx:id="coin2" onMouseClicked="#OpenOpps" GridPane.rowIndex="2" />
+            <TextField fx:id="coin3" onMouseClicked="#OpenOpps" GridPane.rowIndex="3" />
+            <TextField fx:id="coin4" onMouseClicked="#OpenOpps" GridPane.rowIndex="4" />
+            <TextField fx:id="coin5" onMouseClicked="#OpenOpps" GridPane.rowIndex="5" />
+            <TextField fx:id="coin6" onMouseClicked="#OpenOpps" GridPane.rowIndex="6" />
+            <TextField fx:id="coin7" onMouseClicked="#OpenOpps" GridPane.rowIndex="7" />
+            <TextField fx:id="coin8" onMouseClicked="#OpenOpps" GridPane.rowIndex="8" />
+            <TextField fx:id="coin9" onMouseClicked="#OpenOpps" GridPane.rowIndex="9" />
+            <TextField fx:id="coin10" onMouseClicked="#OpenOpps" GridPane.rowIndex="10" />
+            <TextField fx:id="coin11" onMouseClicked="#OpenOpps" GridPane.rowIndex="11" />
    			<!--          	column -->         
             <TextField alignment="CENTER" text="Current Value" GridPane.columnIndex="1" />
             <TextField fx:id="value1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
