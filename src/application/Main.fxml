@@ -124,6 +124,6 @@
 
          </children>
       </GridPane>
-      <WebView fx:id="browser" layoutX="449.0" layoutY="9.0" prefHeight="270.0" prefWidth="440.0" />
+      <WebView fx:id="engine" layoutX="449.0" layoutY="9.0" prefHeight="270.0" prefWidth="440.0" />
    </children>
 </AnchorPane>
