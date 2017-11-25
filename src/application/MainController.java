@@ -8,6 +8,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.scene.control.TextField;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import apis.Coin;
 import java.io.FileNotFoundException;
 
@@ -71,6 +73,10 @@ public class MainController {
 	private TextField pChange4;
 	@FXML 
 	private TextField pChange5;
+	//micheal & Jerome---test
+	//@FXML private WebView webView;
+	//@FXML private WebEngine engine;
+	
 	
 	
 	public void initialize() {
@@ -81,14 +87,23 @@ public class MainController {
 			this.apiSecret = readIn.next();
 			this.coin = new Coin("BTC", this.apiKey, this.apiSecret);
 			readIn.close();
-			this.balance = "Balance = " + this.coin.getBalance() + " Bitcoin";		
+			this.balance = "Balance = " + this.coin.getBalance() + " Bitcoin";
+			
+			//start jerome webview
+			//engine = webView.getEngine();
+			//engine.load("http://www.purple.com");
+			//end Jerome
+			
 		} catch (FileNotFoundException e) {
 			// Should never happen
 			// TODO: Figure out some logic to put here just in case
 		}
-		this.balanceLabel.setText(this.balance);
+		//this.balanceLabel.setText(this.balance);
+		//replacing above with below for demo
+		this.balanceLabel.setText("3.52 BTC");
 		this.nameLabel.setText(this.name);
-		
+		//engine.load("http://www.google.com");
+
 		
 	}
 	
@@ -101,9 +116,14 @@ public class MainController {
 			oppStage.setScene(scene);
 			oppStage.show();
 			
+
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+	
+
+	
+	
 }

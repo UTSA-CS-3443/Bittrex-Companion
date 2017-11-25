@@ -8,6 +8,8 @@ import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import java.util.Random;
+//jerome added this import
+import javafx.scene.web.WebView;
 
 import java.io.File;
 
