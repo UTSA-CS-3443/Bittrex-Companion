@@ -1,11 +1,13 @@
 package application;
 import apis.Coin;
+import java.util.ArrayList;
 import java.io.PrintWriter;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import java.util.Random;
 
 import java.io.File;
 
@@ -16,6 +18,9 @@ public class Main extends Application {
 	//set this to true and set the int value to the number of seconds to wait between pulls 
 	public static final boolean GATHER_DATA = false;
 	public static final long TIME_TO_WAIT_IN_SECONDS = 10;
+	
+	//set this to true to test the analyzer
+	public static final boolean TEST_ALGORITHM = true;
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -79,8 +84,22 @@ public class Main extends Application {
 			}
 		}
 		
+		if (TEST_ALGORITHM) {
+			String[] coins = {"ETH", "NEO", "BCC", "VTC", "ADA", "OMG", "XRP", "LTC", "LSK", "GRS"};
+			Analyzer ana = new Analyzer(coins);
+			ArrayList<String> coinsList = new ArrayList<String>();
+			if (ana.checkForSuccess()) {
+				coinsList = ana.getCoins();
+				System.out.println(coinsList.size());
+			} else {
+				System.out.println("Failure");
+			}
+			
+			
+		}
 		
 		
-		launch(args);
+		
+		//launch(args);
 	}
 }
