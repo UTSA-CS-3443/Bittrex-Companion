@@ -3,14 +3,17 @@ import java.io.File;
 import java.util.Scanner;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import apis.Coin;
 import java.io.FileNotFoundException;
 
@@ -257,10 +260,15 @@ public class MainController {
 			
 	}
 	
-	public void OpenOpps() {
+	public void OpenOpps(MouseEvent event) {
+		String passString;
 		try {
 			Stage oppStage = new Stage();
 			Parent root = FXMLLoader.load(getClass().getResource("/application/Opps.fxml"));
+			oppStage.setTitle("Coin Detail");
+			Node source = (Node)event.getSource();
+			passString = source.getId();
+			oppStage.setTitle(passString);
 			Scene scene = new Scene(root,600,400);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			oppStage.setScene(scene);
@@ -269,7 +277,6 @@ public class MainController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 	}
 	
 
