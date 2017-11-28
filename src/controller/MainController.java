@@ -1,4 +1,4 @@
-package application;
+package controller;
 
 import java.io.File;
 import java.util.Scanner;
@@ -9,11 +9,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import model.Coin;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
-import apis.Coin;
+
 import java.io.FileNotFoundException;
 
 
@@ -183,7 +184,6 @@ public class MainController {
 			
 		} catch (FileNotFoundException e) {
 			// Should never happen
-			// TODO: Figure out some logic to put here just in case
 		}
 		this.balanceLabel.setText(this.balance);
 		this.nameLabel.setText(this.name);
@@ -284,13 +284,13 @@ public class MainController {
 		String passString;
 		try {
 			Stage oppStage = new Stage();
-			FXMLLoader loader = new FXMLLoader(new File("src/application/Opps.fxml").getAbsoluteFile().toURI().toURL());
+			FXMLLoader loader = new FXMLLoader(new File("src/view/Opps.fxml").getAbsoluteFile().toURI().toURL());
 			Parent root = loader.load();
 			oppStage.setTitle("Coin Detail");
 			Node source = (Node)event.getSource();
 			passString = source.getId();
 			Scene scene = new Scene(root,600,400);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("/view/application.css").toExternalForm());
 			OppsController controller = loader.getController();
 			controller.initialize(passString);
 			oppStage.setScene(scene);

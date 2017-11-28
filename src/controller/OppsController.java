@@ -1,10 +1,11 @@
-package application;
+package controller;
 
 import java.util.HashMap;
 import java.util.Scanner;
 import java.io.File;
-import apis.Coin;
+
 import javafx.scene.control.Label;
+import model.Coin;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 

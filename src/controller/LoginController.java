@@ -1,4 +1,4 @@
-package application;
+package controller;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -80,10 +80,10 @@ public class LoginController {
 				Stage current = (Stage) logButton.getScene().getWindow();
 				current.close();
 				Stage primaryStage = new Stage();
-				Parent root = FXMLLoader.load(getClass().getResource("/application/Main.fxml"));
+				Parent root = FXMLLoader.load(getClass().getResource("/view/Main.fxml"));
 				lblStatus.setText("Login Success");
 				Scene scene = new Scene(root,900,700);
-				scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+				scene.getStylesheets().add(getClass().getResource("/view/application.css").toExternalForm());
 				primaryStage.setScene(scene);
 				primaryStage.show();
 				} else {
@@ -100,9 +100,9 @@ public class LoginController {
 	 */
 	public void Register(ActionEvent event) throws IOException {
 		Stage current = (Stage) logButton.getScene().getWindow();
-		Parent root = FXMLLoader.load(getClass().getResource("/application/Register.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/view/Register.fxml"));
 		Scene scene = new Scene(root, 400, 400);
-		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		scene.getStylesheets().add(getClass().getResource("/view/application.css").toExternalForm());
 		current.setScene(scene);
 		current.show();
 		
@@ -130,9 +130,9 @@ public class LoginController {
 			output.close();
 			regStatus.setText("Registration Succesful!");
 			Stage current = (Stage) regButton.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getResource("/application/Login.fxml"));
+			root = FXMLLoader.load(getClass().getResource("/view/Login.fxml"));
 			Scene scene = new Scene(root, 400, 400);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("/view/application.css").toExternalForm());
 			current.setScene(scene);
 			current.show();
 		}

@@ -1,6 +1,4 @@
-package application;
-
-import apis.Coin;
+package model;
 
 /**
  * Class designed to handle the analysis of all the data and 
