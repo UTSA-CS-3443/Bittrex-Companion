@@ -8,9 +8,22 @@ import javafx.scene.Scene;
 import java.io.File;
 import java.io.PrintWriter;
 import java.io.IOException;
+import java.io.FileNotFoundException;
 
+/**
+ * Main method located here, does the initial setup for the coins data
+ * 
+ * @author Hunter Jones
+ * @author Jerome Stowe
+ * @author Oscar Tena
+ * @author Micheal Womack	
+ * @author Richard Amareth
+ *
+ */
 public class Main extends Application {
-	
+	/**
+	 * JavaFX Boiler Plate code
+	 */
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -23,8 +36,13 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
-	
-	public static void main(String[] args) throws Exception {
+	/**
+	 * main method, does the setup for the table later and pulls in initial data
+	 * 
+	 * @param args
+	 * @throws Exception
+	 */
+	public static void main(String[] args) throws FileNotFoundException {
 		fileInitialize();
 		File writeFile = new File("TableCoins.txt");
 		PrintWriter out = new PrintWriter(writeFile);
@@ -48,7 +66,9 @@ public class Main extends Application {
 		out.close();
 		launch(args);
 	}
-	
+	/**
+	 * Checks to see if the table file aready exists, if not it creates it
+	 */
 	private static void fileInitialize() {
 		File writeFile = new File("TableCoins.txt");
 		if (writeFile.exists() == false) 

@@ -8,6 +8,17 @@ import javafx.scene.control.Label;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
+/**
+ * Controller for the coin detail screen 
+ * 
+ * @author Hunter Jones
+ * @author Jerome Stowe
+ * @author Oscar Tena
+ * @author Micheal Womack	
+ * @author Richard Amareth
+ *
+ */
+
 public class OppsController {
 	@FXML
 	private Label nameLabel;
@@ -41,7 +52,11 @@ public class OppsController {
 	private String coinString, nameString;
 	private Coin coin;
 	
-	
+	/**
+	 * Method to run on initialization of the screen 
+	 * 
+	 * @param tempCoinName coin details to load
+	 */
 	public void initialize(String tempCoinName) {
 		this.coinString = tempCoinName;
 		try {
@@ -64,12 +79,18 @@ public class OppsController {
 		populate();
 		
 	}
-	
+	/**
+	 * Set the coin to be used
+	 * 
+	 * @param coinVal name of the coin
+	 */
 	public void setCoinVal(String coinVal) {
 		this.coinString = coinVal;
 		System.out.println(coinVal);
 	}
-	
+	/**
+	 * Set the labels to the proper values
+	 */
 	private void populate() {
 		this.coin = new Coin(coinsMap.get(this.coinString), "", "");
 		nameLabel.setText(this.coin.getMarketSummary("MarketName"));

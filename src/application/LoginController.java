@@ -1,5 +1,7 @@
 package application;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.FileWriter;
 import java.util.Scanner;
 import javafx.event.ActionEvent;
@@ -11,6 +13,17 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+
+/**
+ * Class to do all the logic for the Login Screen
+ * 
+ * @author Hunter Jones
+ * @author Jerome Stowe
+ * @author Oscar Tena
+ * @author Micheal Womack	
+ * @author Richard Amareth
+ *
+ */
 
 public class LoginController {
 
@@ -43,8 +56,12 @@ public class LoginController {
 	
 	private Parent root;
 
-	
-	public void Login(ActionEvent event) throws Exception{
+	/**
+	 * Checks for login information and compares with registered info
+	 * @param event 
+	 * @throws Exception 
+	 */
+	public void Login(ActionEvent event) throws IOException, FileNotFoundException {
 		File infile = new File("UserStore.txt");
 		if (infile.exists()) {
 			Scanner scan = new Scanner(infile);
@@ -75,7 +92,13 @@ public class LoginController {
 			}
 	}
 	
-	public void Register(ActionEvent event) throws Exception {
+	/**
+	 * Displays the registration screen
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
+	public void Register(ActionEvent event) throws IOException {
 		Stage current = (Stage) logButton.getScene().getWindow();
 		Parent root = FXMLLoader.load(getClass().getResource("/application/Register.fxml"));
 		Scene scene = new Scene(root, 400, 400);
@@ -84,8 +107,12 @@ public class LoginController {
 		current.show();
 		
 	}
-	
-	public void CreateUser(ActionEvent event) throws Exception {
+	/**
+	 * Creates user based on registration screen info
+	 * @param event
+	 * @throws IOException
+	 */
+	public void CreateUser(ActionEvent event) throws IOException {
 		if (regPassword.getText().equals(regPasswordConfirm.getText()) && regPassword.getText() != null) {
 			File outfile = new File("UserStore.txt");
 			if (!outfile.exists()) {

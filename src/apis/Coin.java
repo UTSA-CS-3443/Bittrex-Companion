@@ -2,7 +2,7 @@ package apis;
 
 import java.io.InputStream;
 import java.net.*;
-
+import java.io.IOException;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 
@@ -10,6 +10,15 @@ import java.util.Date;
 import java.util.Formatter;
 import java.util.Scanner;
 import java.security.*;
+/**
+ * Class to handle all the coins information and to call all the Bittrex APIs
+ * 
+ * @author Hunter Jones
+ * @author Jerome Stowe
+ * @author Oscar Tena
+ * @author Micheal Womack	
+ * @author Richard Amareth
+ */
 public class Coin {
 
 	private String coin;
@@ -23,9 +32,9 @@ public class Coin {
 	/**
 	 * Constructor for coin object that initializes the following parameters 
 	 *
-	 * @param coin
-	 * @param apiKey
-	 * @param apiSecret
+	 * @param coin The name of the coin
+	 * @param apiKey APIKey from Bittrex
+	 * @param apiSecret APISecret from Bittrex
 	 */
 	public Coin(String coin, String apiKey, String apiSecret) {
 		this.coin = coin;
@@ -34,25 +43,31 @@ public class Coin {
 	} // End 3-argument coin constructor
 	
 	/**
-	 * Method getInfo takes a string sUrl to... (verify)
+	 * Method getInfo takes a string sUrl to get the info needed to call the APIs
 	 * 
-	 * @param sUrl
-	 * @return JSONObject 
-	 * @throws Exception
+	 * @param sUrl Base String for the URL, provided by Bittrex
+	 * @return JSONObject To take the data and analyze it
 	 */
-	private JSONObject getInfo(String sUrl) throws Exception {
-		this.url = new URL(sUrl);
-		this.urlIn = new Scanner(this.url.openStream());
-		this.urlData = urlIn.next();
-		JSONObject temp = new JSONObject(this.urlData);
+	private JSONObject getInfo(String sUrl) {
+		JSONObject temp = null;
+		try {
+			this.url = new URL(sUrl);
+			this.urlIn = new Scanner(this.url.openStream());
+			this.urlData = urlIn.next();
+			temp = new JSONObject(this.urlData);
+		} catch (MalformedURLException e) {
+			//Should never happen
+		} catch (IOException e) {
+			//Should also never happen
+		}
 		return temp;	
 	} // End getInfo method
 	
 	/**
-	 * Method getTicker takes a key and returns a string to get the value of the coin... (verify/update)
+	 * Method getTicker takes a key and returns a string to get the values of the coin
 	 * 
-	 * @param key
-	 * @return jObj / flag error message
+	 * @param key Which data to pull from the call
+	 * @return The requested value
 	 */
 	public String getTicker(String key) { 
 		try {
@@ -66,10 +81,10 @@ public class Coin {
 	} //End getTicker method
 	
 	/**
-	 * Method getmarketSummary grabs the info of a coin from bittrex and returns... (verify/update) 
+	 * Method getmarketSummary grabs the info of a coin from bittrex and returns lots of data
 	 * 
-	 * @param key
-	 * @return JObj 
+	 * @param key parameter to request data
+	 * @return value of the requested data
 	 */
 	public String getMarketSummary(String key) {
 		try {
@@ -81,6 +96,10 @@ public class Coin {
 		return "Something went seriously wrong here, investigate";
 	} // End getMarketSummary method
 	
+	/**
+	 * Method to get your balance in BTC
+	 * @return String representation of your balance in BTC
+	 */
 	
 	public String getBalance() {
 		try {
@@ -115,14 +134,28 @@ public class Coin {
 			e.printStackTrace();
 		}
 		return "Something went seriously wrong here, investigate";
-	}
+	} //End getBalance() method
+	
+	/**
+	 * Nonce is part of the encryption algorithm to retrieve your balance
+	 * Value is the number of seconds from Unix Epoch
+	 * 
+	 * @return String number of seconds from Unix Epoch until now
+	 */
 	
 	private static String GetNonce() {
 		Date today = new Date();
 		long ms = today.getTime();
 		
 		return String.valueOf(ms);
-	}
+	} //End GetNonce() method
+	
+	/**
+	 * Convert a byte array to a String of Hexadecimal
+	 * 
+	 * @param bytes byte array of the original string
+	 * @return String of hex values, converted from the original
+	 */
 	private static String toHexString(byte[] bytes) {
 		String retVal;
 	    Formatter formatter = new Formatter();
@@ -132,9 +165,18 @@ public class Coin {
 	    retVal = formatter.toString();
 	    formatter.close();
 	    return retVal;
+	} // End of toHexString() method
 
-	}
-
+	/**
+	 * Method to calculate an HMAC 
+	 * 
+	 * @param data String to be converted
+	 * @param key key to use for conversion
+	 * @return Encrypted String
+	 * @throws SignatureException
+	 * @throws NoSuchAlgorithmException
+	 * @throws InvalidKeyException
+	 */
 	private static String calculateHMAC(String data, String key)
 	    throws SignatureException, NoSuchAlgorithmException, InvalidKeyException
 	{
@@ -143,8 +185,5 @@ public class Coin {
 	    Mac mac = Mac.getInstance(HMAC_SHA512);
 	    mac.init(secretKeySpec);
 	    return toHexString(mac.doFinal(data.getBytes()));
-	}
-	
-	
-	
+	} // End of calculateHMAC method
 }

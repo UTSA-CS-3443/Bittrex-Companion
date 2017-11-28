@@ -2,6 +2,18 @@ package apis;
 
 import java.util.HashMap;
 
+/**
+ * Class to take the JSONObject returned from Bittrex API calls and turn it into usable data
+ * relevant to our app.
+ * 
+ * @author Hunter Jones
+ * @author Jerome Stowe
+ * @author Oscar Tena
+ * @author Micheal Womack	
+ * @author Richard Amareth
+ *
+ */
+
 public class JSONObject {
 	private static final int CHECK_CHAR = 11; 		//The 11th character of the String returned from the API call
 													//is a success check, either t (for true) or f (for false). 
@@ -9,8 +21,11 @@ public class JSONObject {
 	private HashMap<String, String> jMap = new HashMap<String, String>();
 	private int i, duplicates;
 	
-	// TODO: Create methods to return values from the Hash as called
-	//Constructor
+	/**
+	 * Constructor, requires the String version of the JSONObject
+	 * 
+	 * @param rawData String version of JSONObject
+	 */
 	public JSONObject(String rawData) {
 		if (rawData == "" || rawData.charAt(CHECK_CHAR) != 't') {	
 			returnFail();
@@ -20,22 +35,33 @@ public class JSONObject {
 			this.i = 0;
 			convert();
 		}
-	}
-	
-	@Override
+	} // End Constructor
+
 	public String toString() {
 		return data;
 	}
-	
+
+	/**
+	 * Return a requested value from the HashMap
+	 * 
+	 * @param key Data to request from the Object
+	 * @return the Value of the data
+	 */
 	public String getValue(String key) {
 		return this.jMap.get(key);
-	}
+	} // End getValue method
 	
+	/**
+	 * Method used only upon failure, will be deprecated in future versions
+	 */
 	private void returnFail() {
 		System.err.println("Invalid value passsed upon creation");
-		System.exit(1);			//Replace with different command on final implementation, just for testing
-	}
+	} // End returnFail method
 	
+	/**
+	 * The real work is all done here. Converts the JSON into a HashMap to make 
+	 * requesting values easier
+	 */
 	private void convert() {
 		try {
 			
@@ -89,9 +115,8 @@ public class JSONObject {
 					}
 				}
 			}
-			
 		} catch (IndexOutOfBoundsException e) {
 			//System.err.println("Did I break this part?");
 		}
-	}
+	} //End convert method
 }

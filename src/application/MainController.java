@@ -19,6 +19,17 @@ import java.io.FileNotFoundException;
 
 
 @SuppressWarnings("unused")
+
+/**
+ * Class to handle all the logic for the Main Screen
+ * 
+ * @author Hunter Jones
+ * @author Jerome Stowe
+ * @author Oscar Tena
+ * @author Micheal Womack	
+ * @author Richard Amareth
+ *
+ */
 public class MainController {
 
 	private String balance, name, apiKey, apiSecret;
@@ -142,7 +153,9 @@ public class MainController {
 	//@FXML private WebEngine engine;
 	
 	
-	
+	/** 
+	 * Initial setup when screen launches
+	 */
 	public void initialize() {
 		this.balance = null;
 		try {
@@ -172,13 +185,16 @@ public class MainController {
 			// Should never happen
 			// TODO: Figure out some logic to put here just in case
 		}
-		//this.balanceLabel.setText(this.balance);
-		//replacing above with below for demo
-		this.balanceLabel.setText("3.52 BTC");
+		this.balanceLabel.setText(this.balance);
 		this.nameLabel.setText(this.name);
 		//engine.load("http://www.google.com");
 	}
-	
+	/**
+	 * Adds the data to the table
+	 * 
+	 * @param i position on the table to add the data to
+	 * @param coinString The value to add to the table in that position
+	 */
 	public void populateTable(int i, String coinString) {
 		String coinName, value, high, low, pChange;
 		String[] splitString;
@@ -258,6 +274,12 @@ public class MainController {
 			this.pChange11.setText(pChange);
 		}		
 	}
+	
+	/**
+	 * Opens the screen for coin details
+	 * 
+	 * @param event
+	 */
 	public void OpenOpps(MouseEvent event) {
 		String passString;
 		try {
