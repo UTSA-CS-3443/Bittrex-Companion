@@ -1,4 +1,5 @@
 package application;
+
 import java.io.File;
 import java.util.Scanner;
 import javafx.fxml.FXML;
@@ -12,14 +13,14 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import apis.Coin;
 import java.io.FileNotFoundException;
 
 
 
+@SuppressWarnings("unused")
 public class MainController {
+
 	private String balance, name, apiKey, apiSecret;
 	private Coin coin;
 	@FXML
@@ -143,6 +144,7 @@ public class MainController {
 	
 	
 	public void initialize() {
+		this.balance = null;
 		try {
 			Scanner readIn = new Scanner(new File("UserInfo.txt"));
 			this.name = readIn.next();
@@ -175,8 +177,6 @@ public class MainController {
 		this.balanceLabel.setText("3.52 BTC");
 		this.nameLabel.setText(this.name);
 		//engine.load("http://www.google.com");
-
-		
 	}
 	
 	public void populateTable(int i, String coinString) {
@@ -256,30 +256,25 @@ public class MainController {
 			this.high11.setText(high);
 			this.low11.setText(low);
 			this.pChange11.setText(pChange);
-		}
-			
+		}		
 	}
-	
 	public void OpenOpps(MouseEvent event) {
 		String passString;
 		try {
 			Stage oppStage = new Stage();
-			Parent root = FXMLLoader.load(getClass().getResource("/application/Opps.fxml"));
+			FXMLLoader loader = new FXMLLoader(new File("src/application/Opps.fxml").getAbsoluteFile().toURI().toURL());
+			Parent root = loader.load();
 			oppStage.setTitle("Coin Detail");
 			Node source = (Node)event.getSource();
 			passString = source.getId();
-			oppStage.setTitle(passString);
 			Scene scene = new Scene(root,600,400);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			OppsController controller = loader.getController();
+			controller.initialize(passString);
 			oppStage.setScene(scene);
-			oppStage.show();
-					
+			oppStage.show();				
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
-
-	
-	
 }
