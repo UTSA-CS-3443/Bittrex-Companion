@@ -36,4 +36,17 @@
 	
 	- Richard
 ------------------------------------------------------------------------------------------- 
+[11/30/2017 - 10:40AM]
+
+	I think it's time I start pushing stuff. I'll have a semi-finished UML done tonight since I 
+	need to review types of relationships and association that our classes have with one
+	another. Please give me feed back or change what you see fit in the UML. The UML will 
+	overall be wrapped up by the end of Friday. Feel free to tweak the project in anyway you 
+	see fit. I need to push some actual code so I'll be messing with the UI and adding stuff
+	to help the user out. Thinking of implementing FAQ button with a new window, adding the 
+	current Bit-coin to USD exchange rate, a walk through of how we select the potential coins.
 	
+	When we meet today we should decide when everything must be wrapped up for the code to 
+	be turned in and fill out the README. Maybe set the deadline to make any last adjustments on
+	Sunday night, update UML Monday and submit the code together at the library on Tuesday.    
+
