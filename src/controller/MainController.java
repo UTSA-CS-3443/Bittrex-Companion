@@ -14,8 +14,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
-
+import java.io.OutputStream;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
+import java.io.IOException;
+import java.net.MalformedURLException;
 
 
 
@@ -150,8 +155,8 @@ public class MainController {
 	@FXML 
 	private TextField pChange11;
 	//micheal & Jerome---test
-	//@FXML private WebView webView;
-	//@FXML private WebEngine engine;
+	@FXML private WebView view;
+	@FXML private WebEngine engine;
 	
 	
 	/** 
@@ -159,6 +164,9 @@ public class MainController {
 	 */
 	public void initialize() {
 		this.balance = null;
+		engine = view.getEngine();
+		engine.load("https://www.google.com");
+
 		try {
 			Scanner readIn = new Scanner(new File("UserInfo.txt"));
 			this.name = readIn.next();
@@ -180,6 +188,7 @@ public class MainController {
 			//start jerome webview
 			//engine = webView.getEngine();
 			//engine.load("http://www.purple.com");
+
 			//end Jerome
 			
 		} catch (FileNotFoundException e) {
@@ -299,4 +308,5 @@ public class MainController {
 			e.printStackTrace();
 		}
 	}
+
 }

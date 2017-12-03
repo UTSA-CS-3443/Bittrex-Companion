@@ -27,6 +27,7 @@ import javafx.stage.Stage;
 
 public class LoginController {
 
+	private static final int CYPHER_KEY = 11;
 	private String username, password;
 	
 	@FXML
@@ -76,7 +77,7 @@ public class LoginController {
 		}
 		
 		if (this.username != null && this.password != null) {
-			if(txtUsername.getText().equals(this.username) && txtPassword.getText().equals(this.password)) {
+			if(txtUsername.getText().equals(this.username) && quickEncrypt(txtPassword.getText()).equals(this.password)) {
 				Stage current = (Stage) logButton.getScene().getWindow();
 				current.close();
 				Stage primaryStage = new Stage();
@@ -113,13 +114,15 @@ public class LoginController {
 	 * @throws IOException
 	 */
 	public void CreateUser(ActionEvent event) throws IOException {
+		String encPass;
 		if (regPassword.getText().equals(regPasswordConfirm.getText()) && regPassword.getText() != null) {
 			File outfile = new File("UserStore.txt");
 			if (!outfile.exists()) {
 				outfile.createNewFile();
 			}
 			FileWriter output = new FileWriter(outfile);
-			output.write(regUsername.getText() + "\n" + regPassword.getText());
+			encPass = quickEncrypt(regPassword.getText());
+			output.write(regUsername.getText() + "\n" + encPass);
 			output.close();
 			outfile = new File("UserInfo.txt");
 			if (!outfile.exists()) {
@@ -139,6 +142,14 @@ public class LoginController {
 		else {
 			regStatus.setText("Passwords do not match!");
 		}	
+	}
+	
+	private String quickEncrypt(String temp) {
+		String tempEnc = "";
+		for (int i = 0; i < temp.length(); i++) 
+			tempEnc += (int) temp.charAt(i) + CYPHER_KEY; 
+			
+		return tempEnc;
 	}
 	
 }
