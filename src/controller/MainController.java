@@ -165,7 +165,7 @@ public class MainController {
 	public void initialize() {
 		this.balance = null;
 		engine = view.getEngine();
-		engine.load("https://www.google.com");
+		engine.load("http://www.helenpetrystoweforjudge.com/cs/twitterfeed.php");
 
 		try {
 			Scanner readIn = new Scanner(new File("UserInfo.txt"));
