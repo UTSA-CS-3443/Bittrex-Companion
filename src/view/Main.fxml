@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.web.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
@@ -15,22 +17,50 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
    <children>
-      <Label fx:id="nameLabel" layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="206.0" textFill="WHITE">
+      <Label fx:id="nameLabel" layoutX="286.0" layoutY="27.0" prefHeight="27.0" prefWidth="206.0" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="balanceLabel" layoutX="14.0" layoutY="41.0" prefHeight="27.0" prefWidth="188.0" textFill="WHITE">
+      <Label fx:id="balanceLabel" layoutX="201.0" layoutY="63.0" prefHeight="27.0" prefWidth="188.0" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="14.0" layoutY="115.0" mnemonicParsing="false" onAction="#OpenOpps" prefHeight="90.0" prefWidth="245.0" text="Coins">
+      <Button layoutX="31.0" layoutY="190.0" mnemonicParsing="false" onAction="#OpenOpps" prefHeight="74.0" prefWidth="155.0" text="Coins">
          <font>
             <Font size="36.0" />
          </font>
       </Button>
-      <GridPane layoutX="24.0" layoutY="350.0" prefHeight="180.0" prefWidth="851.0">
+      <ImageView fitHeight="155.0" fitWidth="170.0" layoutX="23.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Bittrex%20Companion%20project/onlinelogomaker-120217-2317-3211.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="15.0" layoutY="289.0" prefHeight="27.0" prefWidth="206.0" text="(Click on coin for more options)" textFill="WHITE">
+         <font>
+            <Font name="Calibri" size="16.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="50.0" fitWidth="43.0" layoutX="96.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Bittrex%20Companion%20project/Arrows-Down-icon.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="568.0" layoutY="14.0" prefHeight="30.0" prefWidth="148.0" text="The Daily Fix" textFill="WHITE" underline="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" blendMode="OVERLAY" fill="#639dd3" height="335.0" layoutX="13.0" layoutY="353.0" opacity="0.44" stroke="BLACK" strokeType="INSIDE" width="875.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" blendMode="OVERLAY" fill="#639dd3" height="251.0" layoutX="399.0" layoutY="51.0" opacity="0.44" stroke="BLACK" strokeType="INSIDE" width="486.0" />
+      <WebView fx:id="view" layoutX="410.0" layoutY="61.0" prefHeight="233.0" prefWidth="464.0" />
+      <Label layoutX="201.0" layoutY="27.0" prefHeight="27.0" text="Welcome:" textFill="WHITE" underline="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="25.0" layoutY="372.0" prefHeight="180.0" prefWidth="851.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -124,7 +154,11 @@
 
          </children>
       </GridPane>
-      <WebView fx:id="view" layoutX="465.0" layoutY="41.0" prefHeight="200.0" prefWidth="200.0" />
+      <Label layoutX="367.0" layoutY="315.0" text="Opportunities" textFill="WHITE" underline="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
      
    </children>
 </AnchorPane>
