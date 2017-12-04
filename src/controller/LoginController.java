@@ -102,7 +102,7 @@ public class LoginController {
 	public void Register(ActionEvent event) throws IOException {
 		Stage current = (Stage) logButton.getScene().getWindow();
 		Parent root = FXMLLoader.load(getClass().getResource("/view/Register.fxml"));
-		Scene scene = new Scene(root, 400, 400);
+		Scene scene = new Scene(root, 400, 463);
 		scene.getStylesheets().add(getClass().getResource("/view/application.css").toExternalForm());
 		current.setScene(scene);
 		current.show();
