@@ -34,7 +34,7 @@
       </Button>
       <ImageView fitHeight="155.0" fitWidth="170.0" layoutX="23.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Bittrex%20Companion%20project/onlinelogomaker-120217-2317-3211.png" />
+            <Image url="@onlinelogomaker-120217-2317-3211.png" />
          </image>
       </ImageView>
       <Label layoutX="15.0" layoutY="289.0" prefHeight="27.0" prefWidth="206.0" text="(Click on coin for more options)" textFill="WHITE">
