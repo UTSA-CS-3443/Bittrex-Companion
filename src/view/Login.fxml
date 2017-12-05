@@ -42,7 +42,7 @@
       </Label>
       <ImageView fitHeight="122.0" fitWidth="167.0" layoutX="132.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Bittrex%20Companion%20project/onlinelogomaker-120217-2317-3211.png" />
+            <Image url="@onlinelogomaker-120217-2317-3211.png" />
          </image>
       </ImageView>
       <Label layoutX="14.0" layoutY="6.0" prefHeight="35.0" prefWidth="111.0" text="Login Status:" textFill="WHITE" underline="true">

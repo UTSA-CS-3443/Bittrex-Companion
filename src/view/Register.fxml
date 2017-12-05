@@ -56,7 +56,7 @@
       </Label>
       <ImageView fitHeight="103.0" fitWidth="117.0" layoutX="142.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Bittrex%20Companion%20project/onlinelogomaker-120217-2317-3211.png" />
+            <Image url="@onlinelogomaker-120217-2317-3211.png" />
          </image>
       </ImageView>
    </children>
