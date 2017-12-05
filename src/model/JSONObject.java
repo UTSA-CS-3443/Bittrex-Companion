@@ -28,6 +28,7 @@ public class JSONObject {
 	 */
 	public JSONObject(String rawData) {
 		if (rawData == "" || rawData.charAt(CHECK_CHAR) != 't') {	
+			System.out.println(rawData);
 			returnFail();
 		}
 		else {

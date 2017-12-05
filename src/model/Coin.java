@@ -136,6 +136,70 @@ public class Coin {
 		return "Something went seriously wrong here, investigate";
 	} //End getBalance() method
 	
+	public String sellCoin(String amount, String rate) {
+		String uuid = null, rawData = null;
+
+		
+		try {
+			String nonce = GetNonce();
+			String uri = "https://bittrex.com/api/v1.1/market/selllimit?apikey=" + this.apiKey + "&market=BTC-" + this.coin + "&quantity=" + amount + "&rate=" + rate + "&nonce=" + nonce;
+			String apisign = calculateHMAC(uri, this.apiSecret);
+			URL url = new URL(uri);
+			URLConnection con = url.openConnection();
+			con.addRequestProperty("apikey", this.apiKey);
+			con.addRequestProperty("apisecret", this.apiSecret);
+			con.addRequestProperty("nonce", nonce);
+			con.addRequestProperty("apisign", apisign);
+			if (!con.getDoOutput()) {
+				con.setDoOutput(true);
+			}
+			InputStream is = con.getInputStream();
+			Scanner in = new Scanner(is);
+			while (in.hasNext()) {
+				rawData += in.next();
+			}
+			in.close();
+			JSONObject tempObj = new JSONObject(rawData);
+			uuid = tempObj.getValue("uuid");
+		} catch (Exception e) {
+			System.err.println("HAHAHAHAHA OOPS");
+		}
+		
+		return uuid;
+		
+	}
+	
+	public String buyCoin(String amount, String rate) {
+		String rawData = null;
+		String uuid = null;
+		try {
+			String nonce = GetNonce();
+			String uri = "https://bittrex.com/api/v1.1/market/buylimit?apikey=" + this.apiKey + "&market=BTC-" + this.coin + "&quantity=" + amount + "&rate=" + rate + "&nonce=" + nonce;
+			String apisign = calculateHMAC(uri, this.apiSecret);
+			URL url = new URL(uri);
+			URLConnection con = url.openConnection();
+			con.addRequestProperty("apikey", this.apiKey);
+			con.addRequestProperty("apisecret", this.apiSecret);
+			con.addRequestProperty("nonce", nonce);
+			con.addRequestProperty("apisign", apisign);
+			if (!con.getDoOutput()) {
+				con.setDoOutput(true);
+			}	
+			InputStream is = con.getInputStream();
+			Scanner in = new Scanner(is);
+			while (in.hasNext()) {
+				rawData += in.next();
+			}
+			in.close();
+			JSONObject tempObj = new JSONObject(rawData);
+			uuid = tempObj.getValue("uuid");
+		} catch (Exception e) {
+			System.err.println("HAHAHAHAHA OOPS");
+		}
+	
+	return uuid;
+	}
+	
 	/**
 	 * Nonce is part of the encryption algorithm to retrieve your balance
 	 * Value is the number of seconds from Unix Epoch

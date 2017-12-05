@@ -3,11 +3,15 @@ package controller;
 import java.util.HashMap;
 import java.util.Scanner;
 import java.io.File;
-
 import javafx.scene.control.Label;
 import model.Coin;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.event.ActionEvent;
 
 /**
  * Controller for the coin detail screen 
@@ -52,13 +56,15 @@ public class OppsController {
 	private Scanner fileIn;
 	private String coinString, nameString;
 	private Coin coin;
+	private String balance;
 	
 	/**
 	 * Method to run on initialization of the screen 
 	 * 
 	 * @param tempCoinName coin details to load
 	 */
-	public void initialize(String tempCoinName) {
+	public void initialize(String tempCoinName, String balance) {
+		this.balance = balance;
 		this.coinString = tempCoinName;
 		try {
 			coinsMap = new HashMap<String, String>();
@@ -103,6 +109,43 @@ public class OppsController {
 		askLabel.setText(this.coin.getMarketSummary("Ask"));
 		buyLabel.setText(this.coin.getMarketSummary("OpenBuyOrders"));
 		sellLabel.setText(this.coin.getMarketSummary("OpenSellOrders"));
+
+	}
+	
+	
+	public void OpenBuy(ActionEvent event) {
+		try {
+			Stage current = (Stage) this.buyButton.getScene().getWindow();
+			current.setTitle("Buy");
+			FXMLLoader loader = new FXMLLoader(new File("src/view/Buy.fxml").getAbsoluteFile().toURI().toURL());
+			Parent root = loader.load();
+			BuyController buyControl = loader.getController();
+			buyControl.passCoin(this.nameLabel.getText(), Double.valueOf(this.balance), this.coin.getMarketSummary("ask"));
+			Scene scene = new Scene(root, 600,400);
+			scene.getStylesheets().add(getClass().getResource("/view/application.css").toExternalForm());
+			current.setScene(scene);
+			current.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+			
+	}
+	
+	public void OpenSell(ActionEvent event) {
+		try {
+			Stage current = (Stage) this.buyButton.getScene().getWindow();
+			FXMLLoader loader = new FXMLLoader(new File("src/view/Sell.fxml").getAbsoluteFile().toURI().toURL());
+			Parent root = loader.load();
+			SellController sellControl = loader.getController();
+			sellControl.passCoin(this.nameLabel.getText(), Double.valueOf(this.balance), this.coin.getMarketSummary("bid"));
+			Scene scene = new Scene(root, 600,400);
+			scene.getStylesheets().add(getClass().getResource("/view/application.css").toExternalForm());
+			current.setScene(scene);
+			current.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+			
 	}
 
 }

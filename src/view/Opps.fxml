@@ -8,12 +8,12 @@
 
 <AnchorPane minHeight="400.0" minWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OppsController">
    <children>
-      <Button fx:id="buyButton" layoutX="100.0" layoutY="298.0" mnemonicParsing="false" text="Buy">
+      <Button fx:id="buyButton" layoutX="100.0" layoutY="298.0" mnemonicParsing="false" onAction="#OpenBuy" text="Buy">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="sellButton" layoutX="449.0" layoutY="298.0" mnemonicParsing="false" text="Sell">
+      <Button fx:id="sellButton" layoutX="449.0" layoutY="298.0" mnemonicParsing="false" onAction="#OpenSell" text="Sell">
          <font>
             <Font size="24.0" />
          </font>

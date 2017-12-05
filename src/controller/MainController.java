@@ -301,12 +301,13 @@ public class MainController {
 			Scene scene = new Scene(root,600,400);
 			scene.getStylesheets().add(getClass().getResource("/view/application.css").toExternalForm());
 			OppsController controller = loader.getController();
-			controller.initialize(passString);
+			controller.initialize(passString, this.coin.getBalance());
 			oppStage.setScene(scene);
 			oppStage.show();				
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+
 
 }
