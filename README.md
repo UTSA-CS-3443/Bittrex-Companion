@@ -1,6 +1,6 @@
 # Bittrex-Companion
 
-Application used to assist beginners in trading cryptocurrencies and provided introductory 
+Application used to assist beginners in trading cryptocurrencies and provide introductory 
 algorithmic-trading-base recommendations.
 
 Before running, please ensure you have an internet-enabled network connection.
