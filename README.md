@@ -20,7 +20,9 @@ You will see options to either "Login" or "Register".  Choose "Register".
 
 ***Step 2:***
 
-For convenience, we have pre-populated the API Key pair fields with a key that will work for you.
+For convenience, we have pre-populated the API Key pair fields with a key that will work for you. 
+
+These pre-populated keys will not work for buying and selling.
 
 Fill out the other fields and click register.  
 
