@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane minHeight="400.0" minWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controller.SellController">
-	<!-- TODO Add Nodes -->
+<AnchorPane minHeight="400.0" minWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SellController">
+   <children>
+      <Label layoutX="145.0" layoutY="27.0" text="Percent Increase to Realize">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Slider fx:id="percentSlider" layoutX="224.0" layoutY="112.0" />
+      <Label layoutX="278.0" layoutY="167.0" text="${percentSlider.value}" />
+      <Button fx:id="sellButton" layoutX="260.0" layoutY="222.0" mnemonicParsing="false" onAction="#sellCoin" text="Sell">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>

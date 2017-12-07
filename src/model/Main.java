@@ -20,6 +20,10 @@ import java.io.FileNotFoundException;
  *
  */
 public class Main extends Application {
+	
+	private static final int LOGIN_WIDTH = 400;
+	private static final int LOGIN_HEIGHT = 400;
+	
 	/**
 	 * JavaFX Boiler Plate code
 	 */
@@ -27,7 +31,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("/view/Login.fxml"));
-			Scene scene = new Scene(root,400,400);
+			Scene scene = new Scene(root,LOGIN_WIDTH,LOGIN_HEIGHT);
 			scene.getStylesheets().add(getClass().getResource("/view/application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
@@ -56,8 +60,8 @@ public class Main extends Application {
 		for (int i = 0; i < 20; i++) {
 			coinAnalyzer = new Analyzer(coinsToAnalyze[i]);
 			if (coinAnalyzer.checkForSuccess() && count < 11) {
-				out.printf("%s,%f,%f,%f,%.2f\n",coinAnalyzer.getName(), coinAnalyzer.getValue(), coinAnalyzer.getHigh(),
-						coinAnalyzer.getLow(), coinAnalyzer.getPChange());
+				out.printf("%s,%f,%f,%f,%.2f,%5.2f\n",coinAnalyzer.getName(), coinAnalyzer.getValue(), coinAnalyzer.getHigh(),
+						coinAnalyzer.getLow(), coinAnalyzer.getPChange(), coinAnalyzer.getVolume());
 				out.flush();
 				count++;
 			}
@@ -66,7 +70,7 @@ public class Main extends Application {
 		launch(args);
 	}
 	/**
-	 * Checks to see if the table file aready exists, if not it creates it
+	 * Checks to see if the table file already exists, if not it creates it
 	 */
 	private static void fileInitialize() {
 		File writeFile = new File("TableCoins.txt");
@@ -74,7 +78,7 @@ public class Main extends Application {
 			try {
 				writeFile.createNewFile();
 			} catch (IOException e) {
-				//HAHA Nothing happens here
+				
 			}
 	}
 }

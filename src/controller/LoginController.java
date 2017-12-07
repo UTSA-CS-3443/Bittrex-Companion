@@ -28,32 +28,27 @@ import javafx.stage.Stage;
 public class LoginController {
 
 	private static final int CYPHER_KEY = 11;
+	private static final int MAIN_WIDTH = 900;
+	private static final int MAIN_HEIGHT = 700;
+	private static final int REGISTER_WIDTH = 400;
+	private static final int REGISTER_HEIGHT = 463;
+	private static final int LOGIN_WIDTH = 400;
+	private static final int LOGIN_HEIGHT = 400;
+	
 	private String username, password;
 	
-	@FXML
-	private Label lblStatus;
-	@FXML 
-	private Label regStatus;
-	@FXML
-	private TextField txtUsername;
-	@FXML
-	private TextField txtPassword;
-	@FXML 
-	private TextField regUsername;
-	@FXML
-	private TextField regPassword;
-	@FXML
-	private TextField regPasswordConfirm;
-	@FXML
-	private TextField regName;
-	@FXML
-	private TextField regAPIKey;
-	@FXML
-	private TextField regAPISecret;
-	@FXML
-	private Button regButton;
-	@FXML 
-	private Button logButton;
+	@FXML private Label lblStatus;
+	@FXML private Label regStatus;
+	@FXML private TextField txtUsername;
+	@FXML private TextField txtPassword;
+	@FXML private TextField regUsername;
+	@FXML private TextField regPassword;
+	@FXML private TextField regPasswordConfirm;
+	@FXML private TextField regName;
+	@FXML private TextField regAPIKey;
+	@FXML private TextField regAPISecret;
+	@FXML private Button regButton;
+	@FXML private Button logButton;
 	
 	private Parent root;
 
@@ -83,7 +78,7 @@ public class LoginController {
 				Stage primaryStage = new Stage();
 				Parent root = FXMLLoader.load(getClass().getResource("/view/Main.fxml"));
 				lblStatus.setText("Login Success");
-				Scene scene = new Scene(root,900,700);
+				Scene scene = new Scene(root,MAIN_WIDTH, MAIN_HEIGHT);
 				scene.getStylesheets().add(getClass().getResource("/view/application.css").toExternalForm());
 				primaryStage.setScene(scene);
 				primaryStage.show();
@@ -102,11 +97,10 @@ public class LoginController {
 	public void Register(ActionEvent event) throws IOException {
 		Stage current = (Stage) logButton.getScene().getWindow();
 		Parent root = FXMLLoader.load(getClass().getResource("/view/Register.fxml"));
-		Scene scene = new Scene(root, 400, 463);
+		Scene scene = new Scene(root, REGISTER_WIDTH, REGISTER_HEIGHT);
 		scene.getStylesheets().add(getClass().getResource("/view/application.css").toExternalForm());
 		current.setScene(scene);
 		current.show();
-		
 	}
 	/**
 	 * Creates user based on registration screen info
@@ -134,7 +128,7 @@ public class LoginController {
 			regStatus.setText("Registration Succesful!");
 			Stage current = (Stage) regButton.getScene().getWindow();
 			root = FXMLLoader.load(getClass().getResource("/view/Login.fxml"));
-			Scene scene = new Scene(root, 400, 400);
+			Scene scene = new Scene(root, LOGIN_WIDTH, LOGIN_HEIGHT);
 			scene.getStylesheets().add(getClass().getResource("/view/application.css").toExternalForm());
 			current.setScene(scene);
 			current.show();
@@ -143,7 +137,11 @@ public class LoginController {
 			regStatus.setText("Passwords do not match!");
 		}	
 	}
-	
+	/**
+	 * Method used to encrypt the user's password, simple Caesar cypher
+	 * @param temp String to be encrypted
+	 * @return String encrypted version of temp
+	 */
 	private String quickEncrypt(String temp) {
 		String tempEnc = "";
 		for (int i = 0; i < temp.length(); i++) 
@@ -151,5 +149,4 @@ public class LoginController {
 			
 		return tempEnc;
 	}
-	
 }

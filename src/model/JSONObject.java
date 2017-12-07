@@ -28,7 +28,10 @@ public class JSONObject {
 	 */
 	public JSONObject(String rawData) {
 		if (rawData == "" || rawData.charAt(CHECK_CHAR) != 't') {	
-			System.out.println(rawData);
+			String errData[] = rawData.split(",");
+			String specErr[] = errData[1].split(":");
+			String errOut = specErr[1];
+			System.err.println("ERROR:" + errOut);
 			returnFail();
 		}
 		else {

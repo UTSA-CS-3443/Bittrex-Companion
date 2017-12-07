@@ -25,28 +25,21 @@ import javafx.event.ActionEvent;
  */
 
 public class OppsController {
-	@FXML
-	private Label nameLabel;
-	@FXML
-	private Label highLabel;
-	@FXML
-	private Label lowLabel;
-	@FXML 
-	private Label volumeLabel;
-	@FXML
-	private Label lastLabel;
-	@FXML
-	private Label bidLabel;
-	@FXML 
-	private Label askLabel;
-	@FXML
-	private Label buyLabel;
-	@FXML 
-	private Label sellLabel;
-	@FXML 
-	private Button buyButton;
-	@FXML
-	private Button sellButton;
+	
+	private static final int BUY_SELL_SCREEN_HEIGHT = 400;
+	private static final int BUY_SELL_SCREEN_WIDTH = 600;
+	
+	@FXML private Label nameLabel;
+	@FXML private Label highLabel;
+	@FXML private Label lowLabel;
+	@FXML private Label volumeLabel;
+	@FXML private Label lastLabel;
+	@FXML private Label bidLabel;
+	@FXML private Label askLabel;
+	@FXML private Label buyLabel;
+	@FXML private Label sellLabel;
+	@FXML private Button buyButton;
+	@FXML private Button sellButton;
 	
 	private String[] coinStrings = {"coin1", "coin2", "coin3", "coin4", "coin5", "coin6", "coin7", "coin8", "coin9", "coin10", "coin11", ""};
 	private String[] tempSplitArray;
@@ -83,8 +76,7 @@ public class OppsController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		populate();
-		
+		populate();	
 	}
 	/**
 	 * Set the coin to be used
@@ -109,10 +101,11 @@ public class OppsController {
 		askLabel.setText(this.coin.getMarketSummary("Ask"));
 		buyLabel.setText(this.coin.getMarketSummary("OpenBuyOrders"));
 		sellLabel.setText(this.coin.getMarketSummary("OpenSellOrders"));
-
 	}
-	
-	
+	/**
+	 * Method to open the buy screen
+	 * @param event Triggered on click
+	 */
 	public void OpenBuy(ActionEvent event) {
 		try {
 			Stage current = (Stage) this.buyButton.getScene().getWindow();
@@ -121,16 +114,18 @@ public class OppsController {
 			Parent root = loader.load();
 			BuyController buyControl = loader.getController();
 			buyControl.passCoin(this.nameLabel.getText(), Double.valueOf(this.balance), this.coin.getMarketSummary("ask"));
-			Scene scene = new Scene(root, 600,400);
+			Scene scene = new Scene(root, BUY_SELL_SCREEN_WIDTH, BUY_SELL_SCREEN_HEIGHT);
 			scene.getStylesheets().add(getClass().getResource("/view/application.css").toExternalForm());
 			current.setScene(scene);
 			current.show();
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
-			
+		}	
 	}
-	
+	/**
+	 * Method to open the sell screen
+	 * @param event Triggered on click
+	 */
 	public void OpenSell(ActionEvent event) {
 		try {
 			Stage current = (Stage) this.buyButton.getScene().getWindow();
@@ -138,14 +133,12 @@ public class OppsController {
 			Parent root = loader.load();
 			SellController sellControl = loader.getController();
 			sellControl.passCoin(this.nameLabel.getText(), Double.valueOf(this.balance), this.coin.getMarketSummary("bid"));
-			Scene scene = new Scene(root, 600,400);
+			Scene scene = new Scene(root, BUY_SELL_SCREEN_WIDTH , BUY_SELL_SCREEN_HEIGHT);
 			scene.getStylesheets().add(getClass().getResource("/view/application.css").toExternalForm());
 			current.setScene(scene);
 			current.show();
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
-			
+		}		
 	}
-
 }
